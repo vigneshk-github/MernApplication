@@ -36,4 +36,20 @@ router.post("/login", async (req, res) => {
   }
 });
 
+
+router.get("/login", async (req, res) => {
+  const { email_id } = req.query;
+  try {
+    const user = await User.findOne({ email_id });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+
 module.exports = router;
