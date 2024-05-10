@@ -5,6 +5,10 @@ router.post("/register", async (req, res) => {
   const newUser = new User({
     email_id: req.body.email_id,
     password: req.body.password,
+    checkbox1: req.body.checkbox1,
+    checkbox2: req.body.checkbox2,
+    checkbox3: req.body.checkbox3,
+    checkbox4: req.body.checkbox4,
   });
   try {
     const user = await newUser.save();
