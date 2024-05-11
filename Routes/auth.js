@@ -42,7 +42,7 @@ router.post("/login", async (req, res) => {
 
 
 router.get("/login", async (req, res) => {
-  const { email_id } = req.query;
+  const email_id = req.query.login;
   try {
     const user = await User.findOne({ email_id });
     if (!user) {
