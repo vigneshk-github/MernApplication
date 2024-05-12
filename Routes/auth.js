@@ -9,6 +9,7 @@ router.post("/register", async (req, res) => {
     checkbox2: req.body.checkbox2,
     checkbox3: req.body.checkbox3,
     checkbox4: req.body.checkbox4,
+    isAdmin:req.body.isAdmin
   });
   try {
     const user = await newUser.save();

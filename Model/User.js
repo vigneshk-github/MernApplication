@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
   checkbox2: { type: String, default: null },
   checkbox3: { type: String, default: null },
   checkbox4: { type: String, default: null },
+  number: { type: Number, default: null },
 });
 
 module.exports = mongoose.model("User", UserSchema);
